@@ -62,8 +62,8 @@ console.log("Kasir Baru : " + namaKasir);
 //    - JIKA namaPelanggan ada isinya: tampilkan alert sapaan dan log ke console.
 //    - JIKA namaPelanggan kosong / klik Cancel: beri nilai default "Pelanggan Setia" dan tampilkan alert pemberitahuan.
 
+console.log("TES: sudah sampai sebelum alert");
 alert("Selamat datang di " + NAMA_KEDAI + "!");
-
 let namaPelanggan = prompt("Masukkan nama pelanggan:");
 
 if (namaPelanggan) {
