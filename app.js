@@ -23,6 +23,7 @@
 // ============================================================
 // Menampilkan judul sistem ke tab Console (F12)
 console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
+console.log("Skrip JavaScript berhasil terhubung!"); 
 
 // TODO 1: Tulis satu baris console.log() untuk memastikan file app.js sudah terhubung!
 // Contoh output: "Skrip app.js berhasil terhubung!"
@@ -40,7 +41,31 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // 2. Buat variabel "namaKasir" (misal: "Kak Eko") dan "shiftKerja" menggunakan "let".
 // 3. Cetak nilai NAMA_KEDAI, namaKasir, dan shiftKerja ke Console menggunakan console.log().
 
+const NAMA_SEKOLAH = "SMA Negeri 1 Bandung";
+const MATA_PELAJARAN = ["Matematika", "B. Indonesia", "IPAS"];
+let namaGuru = "Pak Budi";
+let kelasPraktikum = "XII IPA 1";
 
+console.log("Sekolah : " + NAMA_SEKOLAH);
+console.log("Kelas : " + kelasPraktikum);
+console.log("Guru : " + namaGuru);
+
+// Demo sifat mutabilitas: "let" bisa diubah, "const" tidak bisa
+namaGuru = "Pak Eko";
+console.log("Guru Baru: " + namaGuru);
+
+// BAGIAN 2B: INPUT INTERAKTIF
+alert("Selamat datang di Aplikasi Kalkulator Nilai Rapor Kelas!");
+let namaSiswa = prompt("Halo! Masukkan nama kamu untuk memulai:");
+
+if (namaSiswa) {
+alert("Halo, " + namaSiswa + "! Yuk kita hitung nilai rapor kamu.");
+console.log("Siswa yang aktif: " + namaSiswa);
+} else {
+alert("Kamu tidak memasukkan nama. Kamu akan dipanggil Siswa Anonim.");
+namaSiswa = "Siswa Anonim";
+console.log("Siswa yang aktif: " + namaSiswa);
+} 
 
 
 // ---- DEMO PERBEDAAN LET vs CONST ----
@@ -73,71 +98,18 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // 2. Buat variabel "totalPoin" yang menjumlahkan ketiga variabel poin di atas.
 // 3. Cetak rincian perolehan poin dan totalPoin ke Console menggunakan console.log().
 
+let nilaiMatematika = 80;
+let nilaiBahasaIndo = 75;
 
+let nilaiIPA = 90;
 
+let jumlahNilai = nilaiMatematika + nilaiBahasaIndo + nilaiIPA;
+let nilaiRataRata = jumlahNilai / 3;
 
-// ============================================================
-// AKTIVITAS 4: Percabangan if-else — Penentuan Tier Membership
-// ============================================================
+console.log("=== NILAI " + namaSiswa + " ===");
+console.log("Matematika : " + nilaiMatematika);
+console.log("B. Indonesia : " + nilaiBahasaIndo);
+console.log("IPA : " + nilaiIPA);
+console.log("Nilai Rata-rata: " + nilaiRataRata);
 
-// TODO 4:
-// 1. Buat variabel "tierMember" dan "benefit" bertipe string kosong ("").
-// 2. Gunakan percabangan "if - else if - else" berdasarkan nilai "totalPoin":
-//    - totalPoin >= 100 : tierMember = "Platinum", benefit = "Diskon 20% + Gratis 1 Minuman Signature"
-//    - totalPoin >= 70  : tierMember = "Gold", benefit = "Diskon 10% di setiap transaksi"
-//    - totalPoin >= 40  : tierMember = "Silver", benefit = "Diskon 5% untuk menu minuman"
-//    - selain itu       : tierMember = "Bronze", benefit = "Member Reguler (kumpulkan poin untuk naik tier)"
-// 3. Cetak hasil tierMember dan benefit ke Console.
-// 4. Tampilkan ringkasan hasil member (nama, total poin, tier, benefit) via dialog alert().
-
-
-
-
-// ============================================================
-// AKTIVITAS 5: Function — Membuat Fungsi yang Bisa Dipakai Ulang
-// ============================================================
-
-// TODO 5A:
-// Buat fungsi "hitungTotalPoin(p1, p2, p3)" yang menerima 3 parameter nilai poin,
-// menjumlahkannya, dan mengembalikan (return) nilai total penjumlahannya.
-
-
-
-
-// TODO 5B:
-// Buat fungsi "tentukanTierMember(poin)" yang menerima 1 parameter nilai poin,
-// dan mengembalikan (return) string nama tier beserta keterangannya.
-
-
-
-
-// TODO 5C:
-// Buktikan bahwa fungsi di atas bisa dipakai ulang (reusable):
-// 1. Hitung total poin dan tentukan tier untuk simulasi Pelanggan B (misal poin: 35, 25, 20).
-// 2. Hitung total poin dan tentukan tier untuk simulasi Pelanggan C (misal poin: 15, 10, 5).
-// 3. Cetak data Pelanggan B dan C ke tab Console.
-
-
-
-
-// ============================================================
-// AKTIVITAS 6: Array & For Loop — Daftar Menu Rekomendasi
-// ============================================================
-
-// TODO 6A:
-// Buat variabel Array bernama "menuRekomendasi" yang berisi minimal 5 nama menu kopi/makanan.
-
-
-
-
-// TODO 6B:
-// Gunakan perulangan "for loop" untuk mencetak setiap menu ke Console dengan format:
-// "1. Nama Menu", "2. Nama Menu", dst. Gunakan (i + 1) untuk nomor urutnya.
-
-
-
-
-// TODO 6C:
-// Cetak jumlah total menu di akhir daftar menggunakan properti ".length".
-// Akhiri program dengan: console.log("=== TUGAS MANDIRI SELESAI DENGAN SUKSES! ===");
 
