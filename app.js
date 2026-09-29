@@ -205,5 +205,42 @@ console.log("=== DATA SISWA C ===");
 console.log("Rata-rata : " + nilaiSiswaC);
 console.log("Predikat : " + predikatSiswaC);
 
+// ============================================================
+// AKTIVITAS 6: Array & For Loop — Daftar Menu Rekomendasi
+// ============================================================
+
+// TODO 6A:
+// Buat variabel Array bernama "menuRekomendasi" yang berisi minimal 5 nama menu kopi/makanan.
+
+
+
+
+// TODO 6B:
+// Gunakan perulangan "for loop" untuk mencetak setiap menu ke Console dengan format:
+// "1. Nama Menu", "2. Nama Menu", dst. Gunakan (i + 1) untuk nomor urutnya.
+
+
+
+
+// TODO 6C:
+// Cetak jumlah total menu di akhir daftar menggunakan properti ".length".
+// Akhiri program dengan: console.log("=== TUGAS MANDIRI SELESAI DENGAN SUKSES! ===");
+
+let daftarSiswa = [
+"Andi Saputra",
+"Bela Ramadhani",
+"Cahya Permana",
+"Dini Anggraeni",
+"Eka Nugraha"
+];
+
+console.log("=== DAFTAR SISWA KELAS " + kelasPraktikum + " ===");
+for (let i = 0; i < daftarSiswa.length; i++) {
+console.log((i + 1) + ". " + daftarSiswa[i]);
+}
+
+console.log("-------------------------------");
+console.log("Total Siswa: " + daftarSiswa.length + " orang");
+console.log("=== PRAKTIKUM SELESAI! ===");
 
 
