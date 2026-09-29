@@ -41,41 +41,19 @@ console.log("Skrip JavaScript berhasil terhubung!");
 // 2. Buat variabel "namaKasir" (misal: "Kak Eko") dan "shiftKerja" menggunakan "let".
 // 3. Cetak nilai NAMA_KEDAI, namaKasir, dan shiftKerja ke Console menggunakan console.log().
 
-const NAMA_SEKOLAH = "SMA Negeri 1 Bandung";
-const MATA_PELAJARAN = ["Matematika", "B. Indonesia", "IPAS"];
-let namaGuru = "Pak Budi";
-let kelasPraktikum = "XII IPA 1";
+const NAMA_KEDAI = "Kopi PSTI Kampus";
+let namaKasir = "Kak Eko";
+let shiftKerja = "Pagi";
 
-console.log("Sekolah : " + NAMA_SEKOLAH);
-console.log("Kelas : " + kelasPraktikum);
-console.log("Guru : " + namaGuru);
+console.log("Nama Kedai : " + NAMA_KEDAI);
+console.log("Nama Kasir : " + namaKasir);
+console.log("Shift Kerja : " + shiftKerja);
 
 // Demo sifat mutabilitas: "let" bisa diubah, "const" tidak bisa
-namaGuru = "Pak Eko";
-console.log("Guru Baru: " + namaGuru);
+namaKasir = "Kak Hansaaa";
+console.log("Kasir Baru : " + namaKasir);
 
 // BAGIAN 2B: INPUT INTERAKTIF
-alert("Selamat datang di Aplikasi Kalkulator Nilai Rapor Kelas!");
-let namaSiswa = prompt("Halo! Masukkan nama kamu untuk memulai:");
-
-if (namaSiswa) {
-alert("Halo, " + namaSiswa + "! Yuk kita hitung nilai rapor kamu.");
-console.log("Siswa yang aktif: " + namaSiswa);
-} else {
-alert("Kamu tidak memasukkan nama. Kamu akan dipanggil Siswa Anonim.");
-namaSiswa = "Siswa Anonim";
-console.log("Siswa yang aktif: " + namaSiswa);
-} 
-
-
-// ---- DEMO PERBEDAAN LET vs CONST ----
-// TODO 2B:
-// Ubah (re-assign) nilai variabel "namaKasir" dengan nama kasir lain,
-// lalu cetak ke Console untuk membuktikan bahwa variabel "let" nilainya dapat diubah.
-
-
-
-
 // ---- BAGIAN 2B: INPUT INTERAKTIF & PENGANDAIAN DASAR ----
 // TODO 2C:
 // 1. Tampilkan pop-up salam pembuka selamat datang menggunakan alert().
@@ -84,8 +62,18 @@ console.log("Siswa yang aktif: " + namaSiswa);
 //    - JIKA namaPelanggan ada isinya: tampilkan alert sapaan dan log ke console.
 //    - JIKA namaPelanggan kosong / klik Cancel: beri nilai default "Pelanggan Setia" dan tampilkan alert pemberitahuan.
 
+alert("Selamat datang di " + NAMA_KEDAI + "!");
 
+let namaPelanggan = prompt("Masukkan nama pelanggan:");
 
+if (namaPelanggan) {
+    alert("Halo, " + namaPelanggan + "! Selamat datang di " + NAMA_KEDAI + ".");
+    console.log("Pelanggan : " + namaPelanggan);
+} else {
+    namaPelanggan = "Pelanggan Setia";
+    alert("Nama tidak diisi. Kamu akan dipanggil Pelanggan Setia.");
+    console.log("Pelanggan : " + namaPelanggan);
+} 
 
 // ============================================================
 // AKTIVITAS 3: Operasi Aritmatika — Akumulasi Poin Transaksi
@@ -98,19 +86,17 @@ console.log("Siswa yang aktif: " + namaSiswa);
 // 2. Buat variabel "totalPoin" yang menjumlahkan ketiga variabel poin di atas.
 // 3. Cetak rincian perolehan poin dan totalPoin ke Console menggunakan console.log().
 
-let nilaiMatematika = 80;
-let nilaiBahasaIndo = 75;
+let poinKopi = 45;
+let poinMakanan = 35;
+let poinMerchandise = 20;
 
-let nilaiIPA = 90;
+let totalPoin = poinKopi + poinMakanan + poinMerchandise;
 
-let jumlahNilai = nilaiMatematika + nilaiBahasaIndo + nilaiIPA;
-let nilaiRataRata = jumlahNilai / 3;
-
-console.log("=== NILAI " + namaSiswa + " ===");
-console.log("Matematika : " + nilaiMatematika);
-console.log("B. Indonesia : " + nilaiBahasaIndo);
-console.log("IPA : " + nilaiIPA);
-console.log("Nilai Rata-rata: " + nilaiRataRata);
+console.log("=== PEROLEHAN POIN " + namaPelanggan + " ===");
+console.log("Poin Kopi : " + poinKopi);
+console.log("Poin Makanan : " + poinMakanan);
+console.log("Poin Merchandise : " + poinMerchandise);
+console.log("Total Poin : " + totalPoin);
 
 // ============================================================
 // AKTIVITAS 4: Percabangan if-else — Penentuan Tier Membership
@@ -128,31 +114,32 @@ console.log("Nilai Rata-rata: " + nilaiRataRata);
 
 // BAGIAN 4: EVALUASI PREDIKAT
 
-let predikat = "";
-let keterangan = "";
+let tierMember = "";
+let benefit = "";
 
-if (nilaiRataRata >= 90) {
-predikat = "A";
-keterangan = "Sangat Baik";
-} else if (nilaiRataRata >= 80) {
-predikat = "B";
-keterangan = "Baik";
-} else if (nilaiRataRata >= 70) {
-predikat = "C";
-keterangan = "Cukup";
+if (totalPoin >= 100) {
+    tierMember = "Platinum";
+    benefit = "Diskon 20% + Gratis 1 Minuman Signature";
+} else if (totalPoin >= 70) {
+    tierMember = "Gold";
+    benefit = "Diskon 10% di setiap transaksi";
+} else if (totalPoin >= 40) {
+    tierMember = "Silver";
+    benefit = "Diskon 5% untuk menu minuman";
 } else {
-predikat = "D";
-keterangan = "Perlu Perbaikan";
+    tierMember = "Bronze";
+    benefit = "Member Reguler (kumpulkan poin untuk naik tier)";
 }
 
-console.log("Predikat : " + predikat + " — " + keterangan);
+console.log("Tier Member : " + tierMember);
+console.log("Benefit : " + benefit);
 
 alert(
-"Hasil Rapor " + namaSiswa + ":\n" +
-"Rata-rata : " + nilaiRataRata + "\n" +
-"Predikat : " + predikat + " (" + keterangan + ")"
+    "Data Member " + namaPelanggan + "\n" +
+    "Total Poin : " + totalPoin + "\n" +
+    "Tier : " + tierMember + "\n" +
+    "Benefit : " + benefit
 );
-
 
 // ============================================================
 // AKTIVITAS 5: Function — Membuat Fungsi yang Bisa Dipakai Ulang
@@ -162,15 +149,26 @@ alert(
 // Buat fungsi "hitungTotalPoin(p1, p2, p3)" yang menerima 3 parameter nilai poin,
 // menjumlahkannya, dan mengembalikan (return) nilai total penjumlahannya.
 
-
-
+function hitungTotalPoin(p1, p2, p3) {
+    let total = p1 + p2 + p3;
+    return total;
+}
 
 // TODO 5B:
 // Buat fungsi "tentukanTierMember(poin)" yang menerima 1 parameter nilai poin,
 // dan mengembalikan (return) string nama tier beserta keterangannya.
 
-
-
+function tentukanTierMember(poin) {
+    if (poin >= 100) {
+        return "Platinum";
+    } else if (poin >= 70) {
+        return "Gold";
+    } else if (poin >= 40) {
+        return "Silver";
+    } else {
+        return "Bronze";
+    }
+}
 
 // TODO 5C:
 // Buktikan bahwa fungsi di atas bisa dipakai ulang (reusable):
@@ -178,32 +176,21 @@ alert(
 // 2. Hitung total poin dan tentukan tier untuk simulasi Pelanggan C (misal poin: 15, 10, 5).
 // 3. Cetak data Pelanggan B dan C ke tab Console.
 
-// BAGIAN 5: FUNGSI MODULAR
-function hitungRataRata(n1, n2, n3) {
-let jumlah = n1 + n2 + n3;
-return jumlah / 3;
-}
-
-function tentukanPredikat(rata) {
-if (rata >= 90) return "A — Sangat Baik";
-if (rata >= 80) return "B — Baik";
-if (rata >= 70) return "C — Cukup";
-return "D — Perlu Perbaikan";
-}
-
 // Simulasi data Siswa B
-let nilaiSiswaB = hitungRataRata(88, 92, 85);
-let predikatSiswaB = tentukanPredikat(nilaiSiswaB);
-console.log("=== DATA SISWA B ===");
-console.log("Rata-rata : " + nilaiSiswaB);
-console.log("Predikat : " + predikatSiswaB);
+let totalPoinB = hitungTotalPoin(35, 25, 20);
+let tierPelangganB = tentukanTierMember(totalPoinB);
 
-// Simulasi data Siswa C (reusabilitas fungsi)
-let nilaiSiswaC = hitungRataRata(65, 70, 68);
-let predikatSiswaC = tentukanPredikat(nilaiSiswaC);
-console.log("=== DATA SISWA C ===");
-console.log("Rata-rata : " + nilaiSiswaC);
-console.log("Predikat : " + predikatSiswaC);
+console.log("=== DATA PELANGGAN B ===");
+console.log("Total Poin : " + totalPoinB);
+console.log("Tier : " + tierPelangganB);
+
+// Simulasi data Siswa C
+let totalPoinC = hitungTotalPoin(15, 10, 5);
+let tierPelangganC = tentukanTierMember(totalPoinC);
+
+console.log("=== DATA PELANGGAN C ===");
+console.log("Total Poin : " + totalPoinC);
+console.log("Tier : " + tierPelangganC);
 
 // ============================================================
 // AKTIVITAS 6: Array & For Loop — Daftar Menu Rekomendasi
@@ -226,21 +213,22 @@ console.log("Predikat : " + predikatSiswaC);
 // Cetak jumlah total menu di akhir daftar menggunakan properti ".length".
 // Akhiri program dengan: console.log("=== TUGAS MANDIRI SELESAI DENGAN SUKSES! ===");
 
-let daftarSiswa = [
-"Andi Saputra",
-"Bela Ramadhani",
-"Cahya Permana",
-"Dini Anggraeni",
-"Eka Nugraha"
+let menuRekomendasi = [
+    "Kopi Susu",
+    "Cappuccino",
+    "Americano",
+    "Croissant",
+    "Kentang Goreng"
 ];
 
-console.log("=== DAFTAR SISWA KELAS " + kelasPraktikum + " ===");
-for (let i = 0; i < daftarSiswa.length; i++) {
-console.log((i + 1) + ". " + daftarSiswa[i]);
+// TODO 6B
+
+console.log("=== MENU REKOMENDASI ===");
+for (let i = 0; i < menuRekomendasi.length; i++) {
+    console.log((i + 1) + ". " + menuRekomendasi[i]);
 }
 
-console.log("-------------------------------");
-console.log("Total Siswa: " + daftarSiswa.length + " orang");
-console.log("=== PRAKTIKUM SELESAI! ===");
-
+// TODO 6C
+console.log("Total Menu Rekomendasi : " + menuRekomendasi.length);
+console.log("=== TUGAS MANDIRI SELESAI DENGAN SUKSES! ===");
 
