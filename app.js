@@ -112,4 +112,98 @@ console.log("B. Indonesia : " + nilaiBahasaIndo);
 console.log("IPA : " + nilaiIPA);
 console.log("Nilai Rata-rata: " + nilaiRataRata);
 
+// ============================================================
+// AKTIVITAS 4: Percabangan if-else — Penentuan Tier Membership
+// ============================================================
+
+// TODO 4:
+// 1. Buat variabel "tierMember" dan "benefit" bertipe string kosong ("").
+// 2. Gunakan percabangan "if - else if - else" berdasarkan nilai "totalPoin":
+//    - totalPoin >= 100 : tierMember = "Platinum", benefit = "Diskon 20% + Gratis 1 Minuman Signature"
+//    - totalPoin >= 70  : tierMember = "Gold", benefit = "Diskon 10% di setiap transaksi"
+//    - totalPoin >= 40  : tierMember = "Silver", benefit = "Diskon 5% untuk menu minuman"
+//    - selain itu       : tierMember = "Bronze", benefit = "Member Reguler (kumpulkan poin untuk naik tier)"
+// 3. Cetak hasil tierMember dan benefit ke Console.
+// 4. Tampilkan ringkasan hasil member (nama, total poin, tier, benefit) via dialog alert().
+
+// BAGIAN 4: EVALUASI PREDIKAT
+
+let predikat = "";
+let keterangan = "";
+
+if (nilaiRataRata >= 90) {
+predikat = "A";
+keterangan = "Sangat Baik";
+} else if (nilaiRataRata >= 80) {
+predikat = "B";
+keterangan = "Baik";
+} else if (nilaiRataRata >= 70) {
+predikat = "C";
+keterangan = "Cukup";
+} else {
+predikat = "D";
+keterangan = "Perlu Perbaikan";
+}
+
+console.log("Predikat : " + predikat + " — " + keterangan);
+
+alert(
+"Hasil Rapor " + namaSiswa + ":\n" +
+"Rata-rata : " + nilaiRataRata + "\n" +
+"Predikat : " + predikat + " (" + keterangan + ")"
+);
+
+
+// ============================================================
+// AKTIVITAS 5: Function — Membuat Fungsi yang Bisa Dipakai Ulang
+// ============================================================
+
+// TODO 5A:
+// Buat fungsi "hitungTotalPoin(p1, p2, p3)" yang menerima 3 parameter nilai poin,
+// menjumlahkannya, dan mengembalikan (return) nilai total penjumlahannya.
+
+
+
+
+// TODO 5B:
+// Buat fungsi "tentukanTierMember(poin)" yang menerima 1 parameter nilai poin,
+// dan mengembalikan (return) string nama tier beserta keterangannya.
+
+
+
+
+// TODO 5C:
+// Buktikan bahwa fungsi di atas bisa dipakai ulang (reusable):
+// 1. Hitung total poin dan tentukan tier untuk simulasi Pelanggan B (misal poin: 35, 25, 20).
+// 2. Hitung total poin dan tentukan tier untuk simulasi Pelanggan C (misal poin: 15, 10, 5).
+// 3. Cetak data Pelanggan B dan C ke tab Console.
+
+// BAGIAN 5: FUNGSI MODULAR
+function hitungRataRata(n1, n2, n3) {
+let jumlah = n1 + n2 + n3;
+return jumlah / 3;
+}
+
+function tentukanPredikat(rata) {
+if (rata >= 90) return "A — Sangat Baik";
+if (rata >= 80) return "B — Baik";
+if (rata >= 70) return "C — Cukup";
+return "D — Perlu Perbaikan";
+}
+
+// Simulasi data Siswa B
+let nilaiSiswaB = hitungRataRata(88, 92, 85);
+let predikatSiswaB = tentukanPredikat(nilaiSiswaB);
+console.log("=== DATA SISWA B ===");
+console.log("Rata-rata : " + nilaiSiswaB);
+console.log("Predikat : " + predikatSiswaB);
+
+// Simulasi data Siswa C (reusabilitas fungsi)
+let nilaiSiswaC = hitungRataRata(65, 70, 68);
+let predikatSiswaC = tentukanPredikat(nilaiSiswaC);
+console.log("=== DATA SISWA C ===");
+console.log("Rata-rata : " + nilaiSiswaC);
+console.log("Predikat : " + predikatSiswaC);
+
+
 
